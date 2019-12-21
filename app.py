@@ -18,10 +18,10 @@ def study_image():
                 "data": {
                  "image": {
                   "url": 'image_url'
+                  }
                 }
-              }
-          }
-       ]}
+            }
+        ]}
 
 response = request.post(api_url,headers=headers,data=jason.dumps(data))
 
@@ -32,7 +32,7 @@ response = request.post(api_url,headers=headers,data=jason.dumps(data))
 
     # YOUR CODE HERE!
     
-    return render_template('home.html', results="No results yet :(")
+    return render_template('home.html', results=response)
 
 if __name__ == '__main__':
     app.run(debug=True)
