@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request 
 app = Flask(__name__)
 
 @app.route('/')
@@ -23,7 +23,7 @@ def study_image():
             }
         ]}
 
-response = request.post(api_url,headers=headers,data=jason.dumps(data))
+        response = request.post(api_url,headers=headers,data=jason.dumps(data))
 
     # At this point you have the image_url value from the front end
     # Your job now is to send this information to the Clarifai API
@@ -32,7 +32,9 @@ response = request.post(api_url,headers=headers,data=jason.dumps(data))
 
     # YOUR CODE HERE!
     
-    return render_template('home.html', results=response)
+        return render_template('home.html', results=response)
+
+# response = request.post(api_url,headers=headers,data=jason.dumps(data))
 
 if __name__ == '__main__':
     app.run(debug=True)
